@@ -3,7 +3,7 @@ const { Pizza } = require('../models');
 const pizzaController = {
     getAllPizza(req, res) {
         Pizza.find({})
-            .then(dbPizzaData => res.join(dbPizzaData))
+            .then(dbPizzaData => res.json(dbPizzaData))
             .catch(err => {
                 console.log(err);
                 res.status(400).json(err);
